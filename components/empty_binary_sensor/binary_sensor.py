@@ -5,11 +5,11 @@ from esphome.const import CONF_ID
 
 empty_binary_sensor_ns = cg.esphome_ns.namespace('empty_binary_sensor')
 
-EmptyBinarySensor = empty_binary_sensor_ns.class_('EmptyBinarySensor', binary_sensor.BinarySensor, cg.Component)
+EmptyBinarySensor = empty_binary_sensor_ns.class_('EmptyBinarySensor', cg.PollingComponent)
 
 CONFIG_SCHEMA = binary_sensor.BINARY_SENSOR_SCHEMA.extend({
     cv.GenerateID(): cv.declare_id(EmptyBinarySensor),
-}).extend(cv.COMPONENT_SCHEMA)
+}).extend(cv.polling_component_schema("1s"))
 
 
 def to_code(config):
