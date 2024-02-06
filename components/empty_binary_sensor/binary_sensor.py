@@ -9,7 +9,7 @@ EmptyBinarySensor = empty_binary_sensor_ns.class_('EmptyBinarySensor', cg.Pollin
 
 CONFIG_SCHEMA = binary_sensor.BINARY_SENSOR_SCHEMA.extend({
     cv.GenerateID(): cv.declare_id(EmptyBinarySensor),
-}).extend(cv.polling_component_schema("1s"))
+}).extend(cv.polling_component_schema("100ms"))
 
 
 def to_code(config):
