@@ -11,7 +11,7 @@ void EmptyBinarySensor::setup() {
 }
   
 void EmptyBinarySensor::update() {
-    ESP_LOGD(TAG, "Test MEssage");
+    ESP_LOGD(TAG, "Test Message");
 
 }
 
